@@ -1,0 +1,14 @@
+.page-header {
+  background-color: var(--pf-v5-global--BackgroundColor--100);
+  padding: var(--pf-v5-global--spacer--lg);
+  border-bottom: 1px solid var(--pf-v5-global--BorderColor--100);
+}
+
+.page-header h1 {
+  color: var(--pf-v5-global--Color--100);
+  margin-bottom: var(--pf-v5-global--spacer--md);
+}
+
+.page-header p {
+  color: var(--pf-v5-global--Color--200);
+}
