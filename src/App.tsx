@@ -92,7 +92,7 @@ export const App: React.FC = () => {
             </FlexItem>
             <FlexItem>
               <Title headingLevel="h1" size="lg" style={{ color: '#fff' }}>
-                OpenShift Console
+                Workshop Console
               </Title>
             </FlexItem>
           </Flex>
