@@ -36,18 +36,23 @@
 ### For Participants
 
 **Send 1 week before:**
-- This repository URL
-- Installation checklist:
+- Link to [SETUP.md](./SETUP.md) with automated setup scripts
+- Automated setup scripts check and install:
   - [ ] Node.js 18+ installed
   - [ ] Podman or Docker installed
   - [ ] VS Code installed
   - [ ] Git installed
+  - [ ] Workshop repository cloned
+  - [ ] Dependencies installed
+  - [ ] Tests passing
+- Request they run the setup script and share `setup-validation-report.txt` if issues
 - Request they bring a sample PatternFly codebase (optional)
 
 **Send 1 day before:**
-- Clone and setup instructions
+- Reminder to run setup script if not done
 - AI provider API key requirements (OpenAI, Anthropic, or Ollama)
 - Links to blog post series for background reading
+- Optional office hours time for troubleshooting setup issues
 
 ## Workshop Schedule
 

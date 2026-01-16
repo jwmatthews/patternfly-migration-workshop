@@ -26,3 +26,6 @@ dist-ssr
 # Konveyor analysis results
 analysis-results/
 output.yaml
+
+# Workshop setup validation
+setup-validation-report.txt

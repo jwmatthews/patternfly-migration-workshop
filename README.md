@@ -12,12 +12,24 @@ This app contains carefully curated examples of migration patterns across three 
 
 ## Quick Start
 
-### Prerequisites
+### Automated Setup (Recommended for Workshop Participants)
+
+**For workshop participants**, we provide automated setup scripts that verify and install all prerequisites:
+
+- **macOS/Linux**: See [SETUP.md](./SETUP.md) for instructions
+- **Windows**: See [SETUP.md](./SETUP.md) for PowerShell script
+
+The scripts will check for Node.js, Docker/Podman, VS Code, and set up everything you need.
+
+### Manual Installation
+
+#### Prerequisites
 
 - Node.js 18+ and npm
 - Podman 4+ or Docker 24+ (for Konveyor analysis)
+- VS Code with Konveyor extension (for workshop)
 
-### Installation
+#### Steps
 
 ```bash
 # Clone the repository
