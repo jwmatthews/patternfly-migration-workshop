@@ -276,6 +276,46 @@ if (Test-Path $workshopDir) {
     }
 }
 
+# Clone Konveyor rulesets
+Print-Header "Konveyor Rulesets Setup"
+
+$rulesetsDir = "rulesets"
+$rulesetsUrl = "https://github.com/konveyor/rulesets.git"
+
+if (Test-Path $rulesetsDir) {
+    Print-Info "Rulesets directory already exists"
+    Set-Location $rulesetsDir
+
+    $remoteUrl = git remote get-url origin 2>$null
+    if ($remoteUrl -match "konveyor/rulesets") {
+        Print-Success "Existing rulesets repository found"
+
+        Write-Host "Updating rulesets..."
+        try {
+            git pull
+            Print-Success "Rulesets updated"
+        } catch {
+            Print-Warning "Could not update rulesets (may have local changes)"
+        }
+        Set-Location ..
+    } else {
+        Set-Location ..
+        Print-Warning "Directory 'rulesets' exists but is not the Konveyor rulesets repository"
+        Write-Host "  Skipping rulesets clone. You may need to clone manually."
+    }
+} else {
+    Write-Host "Cloning Konveyor rulesets repository..."
+    try {
+        git clone $rulesetsUrl
+        Print-Success "Rulesets cloned successfully"
+        Print-Info "PatternFly ruleset location: .\rulesets\preview\nodejs\patternfly"
+    } catch {
+        Print-Warning "Failed to clone rulesets repository"
+        Write-Host "  You can clone manually later with:"
+        Write-Host "  git clone $rulesetsUrl"
+    }
+}
+
 # Install dependencies
 Print-Header "Installing Dependencies"
 Write-Host "Running npm install (this may take a few minutes)..."
@@ -356,12 +396,15 @@ if ($script:Errors.Count -eq 0) {
     Write-Host "To run tests:"
     Write-Host "  npm test"
     Write-Host ""
+    Write-Host "To run Konveyor analysis:"
+    Write-Host "  kantra analyze --input . --rules .\rulesets\preview\nodejs\patternfly --output .\analysis-results --source patternfly-v5 --target patternfly-v6"
+    Write-Host ""
     Write-Host "Before the workshop, please also:"
     Write-Host "  1. Get an API key from your AI provider (OpenAI, Anthropic, or setup Ollama)"
     Write-Host "  2. Ensure VS Code Konveyor extension is installed"
     Write-Host "  3. Review the README.md for workshop overview"
     Write-Host ""
-    Write-Host "See you at the workshop!"
+    Write-Host "Everything is ready! See you at the workshop!"
 } else {
     Write-Host "⚠ Setup incomplete" -ForegroundColor Red
     Write-Host ""

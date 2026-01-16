@@ -299,6 +299,43 @@ else
     fi
 fi
 
+# Clone Konveyor rulesets
+print_header "Konveyor Rulesets Setup"
+
+RULESETS_DIR="rulesets"
+RULESETS_URL="https://github.com/konveyor/rulesets.git"
+
+if [ -d "$RULESETS_DIR" ]; then
+    print_info "Rulesets directory already exists"
+    cd "$RULESETS_DIR"
+
+    if git remote get-url origin 2>/dev/null | grep -q "konveyor/rulesets"; then
+        print_success "Existing rulesets repository found"
+
+        echo "Updating rulesets..."
+        if git pull; then
+            print_success "Rulesets updated"
+        else
+            print_warning "Could not update rulesets (may have local changes)"
+        fi
+        cd ..
+    else
+        cd ..
+        print_warning "Directory 'rulesets' exists but is not the Konveyor rulesets repository"
+        echo "  Skipping rulesets clone. You may need to clone manually."
+    fi
+else
+    echo "Cloning Konveyor rulesets repository..."
+    if git clone "$RULESETS_URL"; then
+        print_success "Rulesets cloned successfully"
+        print_info "PatternFly ruleset location: ./rulesets/preview/nodejs/patternfly"
+    else
+        print_warning "Failed to clone rulesets repository"
+        echo "  You can clone manually later with:"
+        echo "  git clone $RULESETS_URL"
+    fi
+fi
+
 # Install dependencies
 print_header "Installing Dependencies"
 echo "Running npm install (this may take a few minutes)..."
@@ -376,12 +413,15 @@ if [ ${#ERRORS[@]} -eq 0 ]; then
     echo "To run tests:"
     echo "  npm test"
     echo ""
+    echo "To run Konveyor analysis:"
+    echo "  kantra analyze --input . --rules ./rulesets/preview/nodejs/patternfly --output ./analysis-results --source patternfly-v5 --target patternfly-v6"
+    echo ""
     echo "Before the workshop, please also:"
     echo "  1. Get an API key from your AI provider (OpenAI, Anthropic, or setup Ollama)"
     echo "  2. Ensure VS Code Konveyor extension is installed"
     echo "  3. Review the README.md for workshop overview"
     echo ""
-    echo "See you at the workshop!"
+    echo "Everything is ready! See you at the workshop!"
 else
     echo -e "${RED}⚠ Setup incomplete${NC}"
     echo ""

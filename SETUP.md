@@ -55,6 +55,7 @@ The setup script verifies and helps install:
 - ✅ **VS Code** - IDE for the workshop
 - ✅ **Konveyor Extension** - AI-assisted migration tools
 - ✅ **Workshop Repository** - Clones and sets up the demo app
+- ✅ **Konveyor Rulesets** - Clones PatternFly v5→v6 migration rules
 - ✅ **Dependencies** - Installs all npm packages
 - ✅ **Tests** - Verifies the app works
 
