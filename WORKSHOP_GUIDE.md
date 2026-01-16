@@ -12,7 +12,7 @@
 
 1. **Test the demo environment**
    ```bash
-   git clone https://github.com/konveyor/patternfly-migration-workshop.git
+   git clone https://github.com/tsanders-rh/patternfly-migration-workshop.git
    cd patternfly-migration-workshop
    npm install
    npm run dev  # Verify app runs
@@ -389,7 +389,7 @@ Track these metrics during the workshop:
 
 ```bash
 # Clone workshop app
-git clone https://github.com/konveyor/patternfly-migration-workshop.git
+git clone https://github.com/tsanders-rh/patternfly-migration-workshop.git
 cd patternfly-migration-workshop
 
 # Install and run
