@@ -21,7 +21,7 @@ This app contains carefully curated examples of migration patterns across three 
 
 ```bash
 # Clone the repository
-git clone https://github.com/konveyor/patternfly-migration-workshop.git
+git clone https://github.com/tsanders-rh/patternfly-migration-workshop.git
 cd patternfly-migration-workshop
 
 # Install dependencies
