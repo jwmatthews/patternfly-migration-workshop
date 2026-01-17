@@ -1,10 +1,19 @@
 # Tier Mapping for PatternFly Rules
 
-This document defines which PatternFly v5→v6 migration rules belong to which workshop tier.
+This document explains how workshop tiers are assigned to PatternFly v5→v6 migration rules.
 
 ---
 
-## Tier 1: Simple Changes (High Confidence - Auto-apply Safe)
+## Overview
+
+**Tier 1 & 2** = Based on rule's `migration_complexity` field
+**Tier 3** = Teaching concept (contextual judgment), NOT a rule category
+
+---
+
+## Tier 1: Simple Changes (Auto-apply Safe)
+
+**Source:** Rules with `migration_complexity: low` (178 rules)
 
 **Characteristics:**
 - 1:1 component/prop renames
@@ -12,146 +21,131 @@ This document defines which PatternFly v5→v6 migration rules belong to which w
 - CSS updates
 - AI success rate: ~95%
 
-### Component Renames
-- `Text` → `Content`
-- `Chip` → `Label`
+**Examples:**
+- Component renames: `Text` → `Content`, `Chip` → `Label`
+- Prop renames: `isDisabled` → `disabled`, `isOpen` → `open`
+- CSS classes: `pf-v5-c-*` → `pf-v6-c-*`, `pf-v5-u-*` → `pf-v6-u-*`
+- CSS variables: `--pf-v5-global-*` → `--pf-t--global-*`
 
-**Rule patterns:**
-- "Text component renamed"
-- "Chip component renamed"
-- "import.*Text.*should.*Content"
-- "import.*Chip.*should.*Label"
+**Prefix:**
+- `[Tier 1]` - Simple changes
+- `[Tier 1 - Bulk CSS]` - CSS patterns (if description matches CSS patterns)
 
-### Prop Renames
-- `isDisabled` → `disabled`
-- `isOpen` → `open`
-- `isActive` → `isCurrent` (NavItem)
-- `isActive` → `isCurrentPage` (BreadcrumbItem)
-
-**Rule patterns:**
-- "isDisabled"
-- "isOpen.*open"
-- "isActive.*isCurrent"
-- "isActive.*isCurrentPage"
-
-### CSS Updates (Bulk)
-- `pf-v5-c-*` → `pf-v6-c-*` (component classes)
-- `pf-v5-u-*` → `pf-v6-u-*` (utility classes)
-- `--pf-v5-global-*` → `--pf-t--global-*` (CSS variables)
-
-**Rule patterns:**
-- "CSS class.*pf-v5-c"
-- "CSS class.*pf-v5-u"
-- "CSS variable.*--pf-v5-global"
-- "pf-v5-c-.*should be.*pf-v6-c"
-- "pf-v5-u-.*should be.*pf-v6-u"
-- "--pf-v5-global.*should be.*--pf-t"
-
-**Prefix:** `[Tier 1]` or `[Tier 1 - Bulk CSS]`
-
----
+**Action:** ✅ **Accept AI fixes** with quick review
 
 ## Tier 2: Moderate Complexity (Review Carefully)
+
+**Source:** Rules with `migration_complexity: medium` (52 rules)
 
 **Characteristics:**
 - Structural component changes
 - Icon prop restructuring
 - Multiple related changes
+- Multi-prop updates
 - AI success rate: ~85%
 
-### MenuToggle Icon Restructuring
-**Old:**
-```tsx
-<MenuToggle>
-  <EllipsisVIcon />
-</MenuToggle>
-```
-
-**New:**
-```tsx
-<MenuToggle icon={<EllipsisVIcon />} />
-```
-
-**Rule patterns:**
-- "MenuToggle.*icon"
-- "icon.*child.*icon prop"
-
-### EmptyState Changes
-Structural consolidation of EmptyState components.
-
-**Rule patterns:**
-- "EmptyState"
-
-### Button Icon Props
-Similar to MenuToggle - icons move from children to props.
-
-**Rule patterns:**
-- "Button.*icon prop"
-- "IconButtons"
-
-### Generic Structural Changes
-**Rule patterns:**
-- "structural.*change"
+**Examples:**
+- MenuToggle icon restructuring (icon as child → icon prop)
+- EmptyState structural consolidation
+- Button icon props
+- Masthead structure changes
+- Component removals (PageNavigation)
+- Multi-prop changes (AccordionToggle, CardHeader)
 
 **Prefix:** `[Tier 2 ⚠️  Review]`
 
+**Action:** ⚠️ **Review AI fixes carefully** before accepting
+- Verify structural changes are correct
+- Check that logic isn't affected
+- Test interactions after applying
+
 ---
 
-## Tier 3: Edge Cases (Manual Review Required)
+## Tier 3: Contextual Judgment (Teaching Concept - NOT a Rule Category)
 
-**Characteristics:**
-- Business logic considerations
-- Compatibility layers
-- Dynamic code patterns
-- AI success rate: ~50% (manual judgment needed)
+**Source:** ⚠️ **NOT based on `migration_complexity`** - Tier 3 is about CONTEXT, not rule complexity
 
-### Compatibility Layers
-Components that intentionally support both v5 and v6.
+**Key Insight:**
+The violations in `tier3-edge-cases/` files will show as `[Tier 1]` or `[Tier 2]` - the **rules are correct!** But the **context requires human judgment** to reject or manually fix.
 
-**Example:**
-```tsx
-import { Text, Content } from '@patternfly/react-core';
+**NO Tier 3 Rule Prefix** - You won't see `[Tier 3 ❌ Manual]` in analysis results.
 
-// Intentional dual support
-const MyComponent = ({ version }) => {
-  if (version === 'v5') return <Text>V5</Text>;
-  return <Content>V6</Content>;
-};
-```
+---
 
-**Rule patterns:**
-- "Compatibility"
-- "compatibility"
-- "dual support"
+### What Tier 3 Teaches:
 
-### Dynamic Components
-Template literals, computed names, dynamic imports.
+**Lesson:** "Even simple patterns require judgment in certain contexts"
 
-**Example:**
-```tsx
-const componentName = `pf-v5-c-${type}`;
-```
+Participants see `[Tier 1]` violations in tier3-edge-cases files and learn:
+- Don't blindly accept AI, even for simple rules
+- Understand the code's purpose before applying fixes
+- Business context > Rule matching
 
-**Rule patterns:**
-- "dynamic"
-- "Dynamic"
-- "template literal"
+---
 
-### Custom Wrappers
-Components that wrap PatternFly components but expose custom APIs.
+### Tier 3 Scenarios in Workshop:
 
-**Example:**
-```tsx
-// Internal: Text → Content (OK)
-// Public API: Keep stable (NOT OK to change)
-export const MyText = (props) => <Text {...props} />;
-```
+#### 1. CompatibilityLayer.tsx
+**Violation:** `[Tier 1] Imports of Text should reference Content`
 
-**Rule patterns:**
-- "custom wrapper"
-- "Custom wrapper"
+**Context:** Intentional dual v5/v6 support during gradual migration
 
-**Prefix:** `[Tier 3 ❌ Manual]`
+**AI Suggests:** Remove `Text` import, use only `Content`
+
+**Correct Action:** ❌ **REJECT** - business requirement for dual support
+
+**Teaching Point:** AI doesn't understand business logic
+
+---
+
+#### 2. DynamicComponent.tsx
+**Violations:**
+- `[Tier 1] Imports of Text should reference Content`
+- `[Tier 1 - Bulk CSS] pf-v5-c-*` violations in template literals
+
+**Context:** Runtime-computed values, dynamic CSS construction
+
+**AI Suggests:** Replace template literal CSS classes
+
+**Correct Action:** ❌ **MANUAL REVIEW** - AI can't trace runtime values
+
+**Teaching Point:** AI limitations with dynamic/computed patterns
+
+---
+
+#### 3. CustomWrapper.tsx
+**Violation:** `[Tier 1] Imports of Text should reference Content`
+
+**Context:** Public API wrapper with custom name
+
+**AI Suggests:** Change `Text` → `Content` everywhere (including wrapper name)
+
+**Correct Action:** ⚠️ **PARTIAL ACCEPT**
+- ✅ Update internal: `Text` → `Content`
+- ❌ Keep public API: `CustomText` name unchanged
+
+**Teaching Point:** Distinguish internal vs external changes, API stability
+
+---
+
+### How Participants Identify Tier 3:
+
+1. **File location:** `src/components/tier3-edge-cases/`
+2. **PARTICIPANT_GUIDE.md:** Explicit Exercise 3 instructions
+3. **Code comments:** `/** IMPORTANT FOR WORKSHOP: REJECT THIS FIX */`
+4. **StoragePage.tsx:** Warning alert about edge cases
+
+**NOT by rule prefix** - that's the learning opportunity!
+
+---
+
+### Tier 3 Success Criteria:
+
+Participants understand:
+- ✅ When to reject AI (compatibility, public APIs, dynamic code)
+- ✅ Why context matters more than rule complexity
+- ✅ How to evaluate AI suggestions critically
+- ✅ **Golden Rule:** "If you don't understand the fix, don't apply it"
 
 ---
 
