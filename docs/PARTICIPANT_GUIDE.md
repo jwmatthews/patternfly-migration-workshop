@@ -44,20 +44,62 @@ npm run dev
 npm test
 ```
 
-**2. Open in VS Code:**
+**2. Run Kantra Analysis:**
+
+```bash
+# Run analysis on the codebase
+kantra analyze \
+  --input . \
+  --rules ../rulesets/preview/nodejs/patternfly \
+  --output ./analysis-results \
+  --source patternfly-v5 \
+  --target patternfly-v6 \
+  --enable-default-rulesets=false
+```
+
+**Note:** This should take 30-60 seconds. Kantra will:
+- Scan all your source files
+- Apply PatternFly v5→v6 migration rules
+- Generate a report with ~274 violations (including ~123 CSS)
+
+**3. Explore the Static HTML Report:**
+
+Open the report in your browser:
+
+```bash
+open analysis-results/static-report/index.html
+# On Windows: start analysis-results/static-report/index.html
+# On Linux: xdg-open analysis-results/static-report/index.html
+```
+
+**What you'll see:**
+- **Summary page**: Overview of all violations by rule
+- **24 issues** with **274 total incidents** (violations)
+- Click on any issue to see:
+  - Affected files
+  - Specific line numbers
+  - Migration guidance
+  - Code snippets
+
+**Take 5 minutes to explore:**
+- Which rules have the most violations?
+- What files are most affected?
+- Notice the tier prefixes: 🟢 [Tier 1] vs 🟡 [Tier 2]
+
+**4. Open in VS Code:**
 
 ```bash
 code .
 ```
 
-**3. Load Konveyor Analysis:**
+**5. Load Konveyor Analysis:**
 
 - Open Konveyor view in VS Code (sidebar icon)
 - Click "Load Analysis Results"
 - Select `analysis-results/output.yaml`
-- You should see ~211 violations
+- You should see the same ~274 violations organized by file
 
-**4. Configure AI Provider:**
+**6. Configure AI Provider:**
 
 Add shared Bedrock credentials to `.vscode/settings.json`:
 
@@ -73,7 +115,7 @@ Add shared Bedrock credentials to `.vscode/settings.json`:
 
 **Or use your own API key:** See [AI_PROVIDERS.md](./AI_PROVIDERS.md)
 
-**5. Test AI Integration:**
+**7. Test AI Integration:**
 
 - In Konveyor view, expand any violation
 - Click "Get solution"
