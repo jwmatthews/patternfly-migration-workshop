@@ -29,3 +29,7 @@ output.yaml
 
 # Workshop setup validation
 setup-validation-report.txt
+
+# Bedrock credentials (NEVER commit these!)
+infrastructure/bedrock-credentials.txt
+infrastructure/cleanup-bedrock.sh
