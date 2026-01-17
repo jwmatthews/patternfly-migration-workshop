@@ -43,7 +43,7 @@ Add tier indicators to PatternFly rules for better workshop UX:
 cd infrastructure
 
 # Add tier prefixes to your rulesets fork
-./add-tier-prefixes.sh ~/Workspace/Rulesets
+./add-tier-prefixes.sh ~/Workspace/rulesets
 
 # This creates a branch: patternfly-workshop-tiers
 # Review, commit, and push to your fork

@@ -7,7 +7,7 @@
 #   ./add-tier-prefixes.sh /path/to/rulesets
 #
 # Example:
-#   ./add-tier-prefixes.sh ~/Workspace/Rulesets
+#   ./add-tier-prefixes.sh ~/Workspace/rulesets
 #
 # This script:
 # 1. Creates a backup of original rules
@@ -42,7 +42,7 @@ if [ -z "$1" ]; then
     echo "Usage: $0 /path/to/rulesets"
     echo ""
     echo "Example:"
-    echo "  $0 ~/Workspace/Rulesets"
+    echo "  $0 ~/Workspace/rulesets"
     exit 1
 fi
 
