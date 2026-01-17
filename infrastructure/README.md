@@ -58,7 +58,7 @@ Share credentials via Slack/Discord (private channel):
 
 Don't want to set up AWS Bedrock? Participants can use their own AI providers:
 
-- See [AI_PROVIDERS.md](../AI_PROVIDERS.md) for configuration options
+- See [AI_PROVIDERS.md](../docs/AI_PROVIDERS.md) for configuration options
 - OpenAI, Anthropic, Ollama (local), or their own AWS accounts
 - No shared credentials needed
 
@@ -82,5 +82,5 @@ Files that are auto-generated and gitignored:
 ## Need Help?
 
 - AWS Bedrock issues: See [BEDROCK_SETUP.md](./BEDROCK_SETUP.md) troubleshooting section
-- Workshop questions: See [WORKSHOP_GUIDE.md](../WORKSHOP_GUIDE.md)
+- Workshop questions: See [WORKSHOP_GUIDE.md](../docs/WORKSHOP_GUIDE.md)
 - Community support: #konveyor on Kubernetes Slack

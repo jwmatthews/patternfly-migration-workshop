@@ -154,9 +154,11 @@ After completing this workshop, you'll understand:
 - [PatternFly v6 Migration Guide](https://www.patternfly.org/get-started/upgrade/)
 - [Konveyor Rulesets Repository](https://github.com/konveyor/rulesets)
 
-## Workshop Guide
+## Documentation
 
-See [WORKSHOP_GUIDE.md](./WORKSHOP_GUIDE.md) for detailed facilitator instructions.
+- **[Participant Guide](./docs/PARTICIPANT_GUIDE.md)** - Step-by-step exercises for workshop day
+- **[Workshop Guide](./docs/WORKSHOP_GUIDE.md)** - Facilitator instructions and timing
+- **[AI Providers](./docs/AI_PROVIDERS.md)** - Configure OpenAI, Anthropic, Bedrock, or Ollama
 
 ## Contributing
 

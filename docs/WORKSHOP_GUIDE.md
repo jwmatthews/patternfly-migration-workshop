@@ -41,7 +41,7 @@
 ### For Participants
 
 **Send 1 week before:**
-- Link to [SETUP.md](./SETUP.md) with automated setup scripts
+- Link to [SETUP.md](../SETUP.md) with automated setup scripts
 - Automated setup scripts check and install:
   - [ ] Node.js 18+ installed
   - [ ] Podman or Docker installed
