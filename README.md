@@ -100,12 +100,6 @@ This is why Konveyor + human expertise beats AI alone.
 4. **Reusability** - Rules codified once, reused across all projects
 5. **Verification** - Re-run analysis to mathematically confirm completion
 
-**Real Example (tackle2-ui):**
-- 3,557 violations across 400+ files
-- Manual estimate: 3-4 weeks
-- Konveyor actual: 2-4 days
-- **Savings: $13,600-19,200 per project**
-
 **Enterprise Impact (50 apps):**
 - **Total Savings: $680,000-960,000**
 - Consistent quality across all teams
