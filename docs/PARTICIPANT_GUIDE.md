@@ -179,39 +179,45 @@ In Konveyor view, look for violations prefixed with **`🟢 [Tier 1 - Bulk CSS]`
 
 ### Step 3: Apply Your First CSS Fix
 
-**Example: CSS Variable in PageHeader.css**
+**Example: CSS Variable --pf-v5-global--**
 
-1. **Find the violation:**
-   - Konveyor view → Expand "PageHeader.css"
-   - Click on violation: **"🟢 [Tier 1 - Bulk CSS] --pf-v5-global-- should be replaced with --pf-t--global--"**
+1. **Find the violation in Konveyor view:**
+   - Expand: **"🟢 [Tier 1 - Bulk CSS] --pf-v5-global-- should be replaced with --pf-t--global--"**
+   - You'll see "24 incidents" - this rule matches 24 locations across multiple files
+   - The message shows: "CSS tokens have been updated. Global non-color tokens have been replaced with newer ones."
 
-2. **Generate AI fix:**
+2. **Expand to see incidents:**
+   - Under "Issue" you'll see individual violations:
+     - `/src/styles/tokens.css:3`
+     - `/src/styles/tokens.css:4`
+     - `/src/components/tier1-simple/PageHeader.css:2`
+     - (and 21 more...)
+
+3. **Pick one incident to fix:**
+   - Click on any incident (e.g., `/src/styles/tokens.css:3`)
+   - Click the AI icon (wrench) next to that specific incident
+
+4. **Generate AI fix:**
    - Click "Get solution"
    - Wait for AI reasoning to appear
 
-3. **Review AI reasoning:**
-   ```
-   CSS token variables have been updated with new naming conventions.
+5. **Review AI reasoning:**
+   - AI will explain the specific change for that file
+   - Shows before/after for the CSS variable pattern
+   - Example: `--pf-v5-global--BackgroundColor--100` → `--pf-t--global--BackgroundColor--100`
 
-   Changes needed:
-   - Line 2: --pf-v5-global--BackgroundColor--100 → --pf-t--global--BackgroundColor--100
-   - Line 3: --pf-v5-global--spacer--lg → --pf-t--global--spacer--lg
-   - Line 4: --pf-v5-global--BorderColor--100 → --pf-t--global--BorderColor--100
-   (and more...)
-   ```
-
-4. **Review the diff:**
+6. **Review the diff:**
    - Check the proposed changes
    - Verify it's only changing CSS variable prefixes
    - Make sure no actual styling logic changed
 
-5. **Apply the fix:**
+7. **Apply the fix:**
    - Click "Apply"
    - This is a safe pattern - just prefix updates
 
-6. **Verify in editor:**
-   - Open `src/components/tier1-simple/PageHeader.css`
-   - Confirm all `--pf-v5-global--*` became `--pf-t--global--*`
+8. **Repeat for other incidents:**
+   - You can apply fixes to other incidents in the same violation rule
+   - Or fix all 24 incidents one by one (or Kai may offer to fix multiple)
 
 ### Step 4: Batch Apply CSS Fixes
 
