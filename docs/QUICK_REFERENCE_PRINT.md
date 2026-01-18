@@ -17,12 +17,12 @@ colorlinks: true
 
 # Exercise Git Workflow
 
-**Exercise 1: Bulk CSS (~120 fixes)**
+**Exercise 1: CSS Variables (~48 fixes)**
 ```bash
 git checkout -b tier1-css-fixes
-# ... apply CSS fixes ...
+# ... bulk fix CSS variables ...
 git add src/styles/ src/components/tier1-simple/PageHeader.css
-git commit -s -m "Apply Tier 1 Bulk CSS fixes"
+git commit -s -m "Apply Tier 1 Bulk CSS variable fixes"
 ```
 
 **Exercise 2: Components (~25-35 fixes)**
@@ -113,13 +113,13 @@ npm run build          # Production build
 
 # Workshop Goals
 
-✅ Fix ~200+ violations across 3 exercises
-✅ Build confidence with CSS bulk fixes (~120, 99% success)
+✅ Fix ~150+ violations across 3 exercises
+✅ Build confidence with CSS variable bulk fixes (~48, 99% success)
 ✅ Learn when to trust AI vs manual review
 ✅ Practice incremental git workflow
 ✅ Understand complexity tiers: ultra-safe → careful → manual
 
-**Remember:** Ex1 builds confidence (bulk CSS). Ex2 teaches review (components). Ex3 shows when to reject AI!
+**Remember:** Ex1 builds confidence (CSS variables). Ex2 teaches review (components + CSS classes). Ex3 shows when to reject AI!
 
 # Resources
 

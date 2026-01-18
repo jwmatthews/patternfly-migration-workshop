@@ -12,8 +12,8 @@ Welcome! This guide will walk you through today's hands-on exercises.
 - Practice incremental migration with git branches
 
 **Three Exercises:**
-- **Exercise 1** (30 min): Tier 1 Bulk CSS - ultra-safe, high-volume (~120 fixes)
-- **Exercise 2** (45 min): Component changes - Tier 1 simple + Tier 2 structural (~25-35 fixes)
+- **Exercise 1** (30 min): Tier 1 Bulk CSS - CSS variables only, ultra-safe bulk operations (~48 fixes)
+- **Exercise 2** (45 min): Component + CSS class changes - Tier 1 simple + Tier 2 structural (~100+ fixes)
 - **Exercise 3** (30 min): Tier 3 edge cases - when AI needs your help (~5-10 decisions)
 
 **How to Identify Tiers:**
@@ -146,15 +146,15 @@ For this workshop, the settings.json approach above is simpler and pre-configure
 
 ---
 
-## Exercise 1: Tier 1 - Bulk CSS Fixes (30 minutes)
+## Exercise 1: Tier 1 - Bulk CSS Variables (30 minutes)
 
-**Goal**: Build confidence with ultra-safe, high-volume CSS pattern updates
+**Goal**: Build confidence with ultra-safe bulk operations on CSS variables
 
-**Why start with CSS?**
-- **Highest AI success rate**: 98-99% (simple find/replace patterns)
-- **Large volume**: ~123 CSS violations to batch-apply
+**Why start with CSS variables?**
+- **Highest AI success rate**: 99% (pure find/replace patterns)
+- **Bulk operations**: Fix 24 violations in one click
 - **Immediate feedback**: Tests still pass, UI looks identical
-- **Builds confidence**: "AI got 120+ fixes correct in 20 minutes!"
+- **Builds confidence**: "AI got 48+ fixes correct in 5 minutes!"
 
 ### Step 1: Create Your Branch
 
@@ -162,26 +162,25 @@ For this workshop, the settings.json approach above is simpler and pre-configure
 git checkout -b tier1-css-fixes
 ```
 
-### Step 2: Find CSS Violations
+### Step 2: Find CSS Variable Violations
 
 In Konveyor view, look for violations prefixed with **`🟢 [Tier 1 - Bulk CSS]`**.
 
-**You should see violations like:**
+**You should see these two main violations:**
 
-- 🟢 **[Tier 1 - Bulk CSS]** --pf-v5-global-- should be replaced with --pf-t--global--
-- 🟢 **[Tier 1 - Bulk CSS]** --pf-v5-global should be replaced with --pf-v6-global
-- 🟢 **[Tier 1 - Bulk CSS]** pf-v5-c-button should be replaced with pf-v6-c-button
-- 🟢 **[Tier 1 - Bulk CSS]** pf-v5-u-mt-lg should be replaced with pf-v6-u-mt-lg
-- (and more CSS class and variable violations)
+- 🟢 **[Tier 1 - Bulk CSS]** --pf-v5-global-- should be replaced with --pf-t--global-- **(24 incidents)**
+- 🟢 **[Tier 1 - Bulk CSS]** --pf-v5-global should be replaced with --pf-v6-global **(24 incidents)**
 
-Each violation shows how many incidents it found (e.g., "24 incidents").
+You may also see some specific breakpoint violations with fewer incidents.
 
-**Where these violations are located:**
-- `src/styles/components.css` - CSS classes and variables
+**These are CSS variable violations only.** CSS class violations like `pf-v5-c-button` are labeled as just **"🟢 [Tier 1]"** (not "Bulk CSS") and we'll handle those in Exercise 2.
+
+**Where these CSS variable violations are located:**
 - `src/styles/tokens.css` - CSS custom properties
-- `src/components/tier1-simple/PageHeader.css` - Component-specific styles
+- `src/styles/components.css` - Inline CSS variables
+- `src/components/tier1-simple/PageHeader.css` - Component styles
 
-**Tip:** Use VS Code's filter in Konveyor view to show only "Bulk CSS" violations
+**Tip:** Use VS Code's filter to show only "Bulk CSS" violations
 
 ### Step 3: Apply Your First CSS Fix
 
@@ -236,34 +235,30 @@ Each violation shows how many incidents it found (e.g., "24 incidents").
    - All 24 incidents are fixed in one operation!
    - This is a safe pattern - just prefix updates
 
-### Step 4: Batch Apply Remaining CSS Fixes
+### Step 4: Apply the Second CSS Variable Violation
 
-**Now use bulk fixes to knock out the remaining ~100+ CSS violations!**
+**Now fix the other main CSS variable violation:**
 
-**For each CSS violation rule, use "Get solution for X incidents":**
+1. **Find:** 🟢 **[Tier 1 - Bulk CSS]** --pf-v5-global should be replaced with --pf-v6-global
+2. **Expand** to see its 24 incidents
+3. **Click AI wrench** at the top level
+4. **Select** "Get solution for 24 incidents"
+5. **Review** the diff - should be changing `--pf-v5-global` to `--pf-v6-global`
+6. **Apply** the bulk fix
 
-1. **CSS variables** (`--pf-v5-global--*` → `--pf-t--global--*`):
-   - You just fixed 24 incidents - check if there are more!
-   - Look for related rules with remaining incidents
-   - Bulk fix each rule
+**Optional: Handle any breakpoint violations**
 
-2. **CSS classes** (`pf-v5-c-*` → `pf-v6-c-*`):
-   - Find violations like "pf-v5-c-button should be replaced with pf-v6-c-button"
-   - Use bulk fix to handle all incidents at once
-   - Safe pattern - just version number changes
+If you see specific breakpoint violations (e.g., `--pf-v5-global--breakpoint--md`), you can bulk fix those too. They're safe CSS variable updates.
 
-3. **CSS utilities** (`pf-v5-u-*` → `pf-v6-u-*`):
-   - Find violations like "pf-v5-u-mt-lg should be replaced with pf-v6-u-mt-lg"
-   - Bulk fix these as well
-   - All utility class updates are safe
+**That's it for Tier 1 - Bulk CSS!**
 
-**What to look for when reviewing bulk fixes:**
-- ✅ Only changing prefixes/version numbers
-- ✅ No changes to actual values or styling logic
-- ✅ Scan the diff for any unexpected changes
-- ✅ Clear before/after examples in AI reasoning
+You've now fixed ~48+ CSS variable incidents using bulk operations. The CSS class violations (`pf-v5-c-button`, `pf-v5-u-mt-lg`) are labeled as "Tier 1" (not "Bulk CSS") and we'll handle those in Exercise 2 alongside component changes.
 
-**Pro tip:** For Tier 1 Bulk CSS, you can safely use "Get solution for X incidents" without deep review. Just verify the diff shows only prefix changes!
+**What you just learned:**
+- ✅ "Tier 1 - Bulk CSS" = CSS variables only (ultra-safe, bulk-apply)
+- ✅ Using "Get solution for X incidents" to fix multiple violations at once
+- ✅ Bulk fixes can eliminate 48+ violations in under 5 minutes
+- ✅ Scanning large diffs for unexpected changes
 
 ### Step 5: Test Your CSS Changes
 
@@ -301,14 +296,14 @@ git commit -s -m "Apply Tier 1 Bulk CSS fixes (v5→v6 prefixes)"
 
 ### ✅ Success Criteria - Exercise 1
 
-- [ ] ~120+ CSS violations fixed (all `🟢 [Tier 1 - Bulk CSS]`)
+- [ ] ~48+ CSS variable violations fixed (all `🟢 [Tier 1 - Bulk CSS]`)
 - [ ] All tests pass (`npm test`)
 - [ ] App runs without errors
 - [ ] UI looks identical to before (no visual changes)
 - [ ] Only CSS files modified (no `.tsx` files)
 - [ ] Changes committed to `tier1-css-fixes` branch
 
-**Key Insight**: You just applied 120+ AI fixes in 20-30 minutes with 99% accuracy. This is the power of complexity classification - knowing which patterns are "auto-apply safe" lets you move fast with confidence.
+**Key Insight**: You just applied ~48 CSS variable fixes in under 5 minutes using bulk operations. This is the power of "Tier 1 - Bulk CSS" - ultra-safe patterns you can confidently batch-apply. CSS class fixes and component changes require more careful review, which we'll cover in Exercise 2.
 
 **Stuck? Compare with:** `git diff main..tier1-css-fixes` (or ask facilitator)
 

@@ -11,12 +11,12 @@
 
 ## Exercise Git Workflow
 
-**Exercise 1: Tier 1 Bulk CSS**
+**Exercise 1: Tier 1 Bulk CSS Variables**
 ```bash
 git checkout -b tier1-css-fixes
-# ... apply ~120 CSS fixes ...
+# ... apply ~48 CSS variable fixes using bulk operations ...
 git add src/styles/ src/components/tier1-simple/PageHeader.css
-git commit -s -m "Apply Tier 1 Bulk CSS fixes (v5→v6 prefixes)"
+git commit -s -m "Apply Tier 1 Bulk CSS variable fixes"
 ```
 
 **Exercise 2: Component Changes**
@@ -119,10 +119,10 @@ npm run build              # Production build
 
 ## Workshop Goals
 
-✅ Fix ~200+ violations across 3 exercises
-✅ Build confidence with CSS bulk fixes (~120 violations, 99% success)
+✅ Fix ~150+ violations across 3 exercises
+✅ Build confidence with CSS variable bulk fixes (~48 violations, 99% success)
 ✅ Learn when to trust AI vs manual review
 ✅ Practice incremental git workflow
 ✅ Understand complexity tiers: ultra-safe → careful review → manual
 
-**Remember:** Exercise 1 builds confidence with high-volume, ultra-safe fixes. Exercise 2 teaches careful review. Exercise 3 demonstrates when to reject AI suggestions!
+**Remember:** Exercise 1 builds confidence with bulk operations on CSS variables. Exercise 2 teaches careful review for components and CSS classes. Exercise 3 demonstrates when to reject AI suggestions!
