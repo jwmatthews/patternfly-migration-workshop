@@ -8,7 +8,7 @@ A hands-on 4-5 hour workshop teaching developers how to migrate PatternFly v5 ap
 
 **The Problem:**
 - Manual PatternFly v5→v6 migrations take **2-4 weeks**
-- Text search (`grep`) returns **1,247 false positives** for a single pattern
+- Text search alone (`grep` without semantic analysis) returns **1,247 false positives** for a single pattern
 - "I think I got everything" ≠ production-ready
 - Every missed violation = potential runtime error
 
@@ -32,7 +32,7 @@ This workshop teaches the **three-part pipeline** that makes systematic migratio
 ### 1. **Semantic Analysis** (Kantra)
 - Find **ALL** violations automatically
 - AST-aware (understands React/TypeScript structure)
-- Zero false positives (88 violations, not 1,247 grep results)
+- Zero false positives (88 violations, not 1,247 text-only search results)
 
 ### 2. **AI-Assisted Fixes** (Kai)
 - Generate intelligent solutions with reasoning
@@ -239,7 +239,7 @@ After completing this workshop, you'll be able to:
 
 ### Technical Skills
 
-1. ✅ Run semantic analysis to find 100% of violations (not 50% like grep)
+1. ✅ Run semantic analysis to find 100% of violations (not 50% like text-only search)
 2. ✅ Generate AI-assisted fixes with context and reasoning
 3. ✅ Review diffs and apply changes confidently
 4. ✅ Test incrementally (branch → fix → test → commit)
