@@ -19,9 +19,9 @@ Welcome! This guide will walk you through today's hands-on exercises.
 **How to Identify Tiers:**
 
 Violations in VS Code will be prefixed with colored tier indicators:
-- **🟢 `🟢 [Tier 1]`** - Simple changes, safe to auto-apply with quick review
-- **🟢 `[Tier 1 - Bulk CSS]`** - CSS pattern updates, safe to batch-apply
-- **🟡 `🟡 [Tier 2]`** - Structural changes, review carefully before applying
+- `🟢 [Tier 1]` - Simple changes, safe to auto-apply with quick review
+- `🟢 [Tier 1 - Bulk CSS]` - CSS pattern updates, safe to batch-apply
+- `🟡 [Tier 2]` - Structural changes, review carefully before applying
 - **No tier prefix** - You'll identify Tier 3 by context (see Exercise 3)
 
 ---
