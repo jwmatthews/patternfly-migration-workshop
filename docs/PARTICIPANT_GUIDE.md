@@ -299,7 +299,7 @@ In Konveyor view, look for violations prefixed with **`🟡 [Tier 2]`**:
 - `src/components/tier2-moderate/IconButtons.tsx` - Button icon props
 - `src/pages/WorkloadsPage.tsx` - Contains Tier 2 components
 
-**Notice:** The ⚠️ emoji warns you to review carefully before applying!
+**Notice:** The 🟡 yellow circle indicates Tier 2 - structural changes that require careful review before applying!
 
 ### Step 3: MenuToggle Icon Restructuring
 
@@ -387,9 +387,9 @@ Similar pattern to MenuToggle:
 **Aim for 25-30 total fixes** (including Tier 1)
 
 **Moderate complexity (review carefully):**
-- ⚠️ **`🟡 [Tier 2]`** MenuToggle changes - verify icon prop
-- ⚠️ **`🟡 [Tier 2]`** EmptyState changes - test interaction
-- ⚠️ **`🟡 [Tier 2]`** Button icon props - check multiple instances
+- 🟡 **`[Tier 2]`** MenuToggle changes - verify icon prop
+- 🟡 **`[Tier 2]`** EmptyState changes - test interaction
+- 🟡 **`[Tier 2]`** Button icon props - check multiple instances
 
 **Red flags (reject or manual fix):**
 - ❌ AI changes unrelated code
