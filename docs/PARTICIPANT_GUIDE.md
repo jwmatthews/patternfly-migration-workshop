@@ -181,21 +181,25 @@ In Konveyor view, look for violations prefixed with **`🟢 [Tier 1 - Bulk CSS]`
 
 **Example: CSS Variable --pf-v5-global--**
 
-1. **Find the violation in Konveyor view:**
-   - Expand: **"🟢 [Tier 1 - Bulk CSS] --pf-v5-global-- should be replaced with --pf-t--global--"**
-   - You'll see "24 incidents" - this rule matches 24 locations across multiple files
+1. **Find and expand the violation rule in Konveyor view:**
+   - Look for: **"🟢 [Tier 1 - Bulk CSS] --pf-v5-global-- should be replaced with --pf-t--global--"**
+   - You'll see "24 incidents" badge
+   - **Click to expand** the violation
    - The message shows: "CSS tokens have been updated. Global non-color tokens have been replaced with newer ones."
 
-2. **Expand to see incidents:**
-   - Under "Issue" you'll see individual violations:
-     - `/src/styles/tokens.css:3`
-     - `/src/styles/tokens.css:4`
-     - `/src/components/tier1-simple/PageHeader.css:2`
-     - (and 21 more...)
+2. **View the incident list:**
+   - After expanding, scroll down to see the "Issue" list
+   - You'll see individual file:line violations:
+     - `/src/styles/tokens.css:10`
+     - `/src/components/tier1-simple/pageheader.css:2`
+     - `/src/components/tier1-simple/pageheader.css:3`
+     - `/src/components/tier1-simple/pageheader.css:4`
+     - (and 20 more...)
+   - Each incident has an AI wrench icon on the right
 
 3. **Pick one incident to fix:**
-   - Click on any incident (e.g., `/src/styles/tokens.css:3`)
-   - Click the AI icon (wrench) next to that specific incident
+   - Find `/src/components/tier1-simple/pageheader.css:2` in the list
+   - Click the AI wrench icon next to that incident
 
 4. **Generate AI fix:**
    - Click "Get solution"
