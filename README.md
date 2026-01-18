@@ -242,25 +242,29 @@ src/
 
 After completing this workshop, you'll be able to:
 
-**Technical Skills:**
+### Technical Skills
+
 1. ✅ Run semantic analysis to find 100% of violations (not 50% like grep)
 2. ✅ Generate AI-assisted fixes with context and reasoning
 3. ✅ Review diffs and apply changes confidently
 4. ✅ Test incrementally (branch → fix → test → commit)
 
-**Judgment Skills:**
+### Judgment Skills
+
 5. ✅ Identify high-confidence patterns (auto-accept safely)
 6. ✅ Recognize patterns requiring careful review (verify AI reasoning)
 7. ✅ Reject AI suggestions when context demands it (compatibility layers, dynamic code)
 8. ✅ Understand **when** to apply rules, not just **how**
 
-**Strategic Skills:**
+### Strategic Skills
+
 9. ✅ Estimate migration scope upfront (violations → hours)
 10. ✅ Track progress objectively (234→0 violations = done)
 11. ✅ Scale approach across multiple projects (reusable rules)
 12. ✅ Verify completeness mathematically (0 violations = ship it)
 
-**Transferable Knowledge:**
+### Transferable Knowledge
+
 - These patterns apply to ANY framework migration (Angular→React, Vue 2→3, React 17→18)
 - Create custom Konveyor rules for your organization's patterns
 - Apply systematic migration thinking to non-code changes
