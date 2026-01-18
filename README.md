@@ -96,7 +96,7 @@ This is why Konveyor + human expertise beats AI alone.
 
 1. **Completeness Certainty** - "0 violations remaining" vs. "I think I got everything"
 2. **Enterprise Scale** - Consistent approach across 50 apps, not 50 different prompts
-3. **Progress Tracking** - "234→150→0 violations (65% complete)" vs. "¯\_(ツ)_/¯"
+3. **Progress Tracking** - "234→150→0 violations (65% complete)" vs. "¯\\_(ツ)_/¯"
 4. **Reusability** - Rules codified once, reused across all projects
 5. **Verification** - Re-run analysis to mathematically confirm completion
 
