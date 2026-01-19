@@ -43,7 +43,7 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
           {activeItem === 'pods' ? 'Pods' : 'Deployments'}
         </Title>
         <p className="pf-v5-u-mt-sm pf-v5-u-color-200">
-          Tier 2 Migration Patterns: Moderate complexity structural changes
+          Manage and monitor your application workloads and deployments
         </p>
       </PageSection>
       <Divider />
@@ -64,7 +64,7 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
                     Resource Actions
                   </Title>
                   <p className="pf-v5-u-mb-md pf-v5-u-font-size-sm pf-v5-u-color-200">
-                    Demonstrates MenuToggle icon restructuring (icon as child → icon prop)
+                    Perform actions on selected resources
                   </p>
                   <ActionMenu
                     onEdit={handleInteraction}
@@ -78,7 +78,7 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
                     Quick Actions
                   </Title>
                   <p className="pf-v5-u-mb-md pf-v5-u-font-size-sm pf-v5-u-color-200">
-                    Demonstrates Button icon prop migration
+                    Quick actions for common operations
                   </p>
                   <IconButtons
                     onAdd={handleInteraction}
@@ -93,7 +93,7 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
                     Search Results
                   </Title>
                   <p className="pf-v5-u-mb-md pf-v5-u-font-size-sm pf-v5-u-color-200">
-                    Demonstrates EmptyState structural changes
+                    Filter and search through available workloads
                   </p>
                   <EmptyStateExample onAction={handleInteraction} />
                 </div>
@@ -106,12 +106,12 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
           className="pf-v5-u-p-md pf-v5-u-background-color-200"
           style={{ borderRadius: '4px', border: '1px solid #d2d2d2' }}
         >
-          <strong>Migration Notes:</strong>
+          <strong>Workload Management Features:</strong>
           <ul className="pf-v5-u-mt-sm pf-v5-u-font-size-sm">
-            <li>MenuToggle: Icon as child → icon prop</li>
-            <li>Button: Icon component child → icon prop</li>
-            <li>EmptyState: Structural component consolidation</li>
-            <li>More complex AI reasoning required</li>
+            <li>Comprehensive action menus for resource management</li>
+            <li>Quick action buttons for common operations</li>
+            <li>Advanced filtering and search capabilities</li>
+            <li>Interactive tabs for organized workflows</li>
           </ul>
         </div>
       </PageSection>

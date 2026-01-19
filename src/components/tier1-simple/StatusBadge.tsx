@@ -12,14 +12,6 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
 }) => {
   const [clickCount, setClickCount] = useState(0);
 
-  const getColor = () => {
-    switch (status) {
-      case 'active': return 'green';
-      case 'inactive': return 'red';
-      case 'pending': return 'orange';
-    }
-  };
-
   const handleClick = () => {
     if (!isDisabled) {
       setClickCount(prev => prev + 1);

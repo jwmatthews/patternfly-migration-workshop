@@ -7,8 +7,8 @@ import { ActionMenu } from '../components/tier2-moderate/ActionMenu';
 import { IconButtons } from '../components/tier2-moderate/IconButtons';
 import { EmptyStateExample } from '../components/tier2-moderate/EmptyStateExample';
 
-describe('Migration Validation Suite', () => {
-  describe('Tier 1: Simple Components - Interactive Validation', () => {
+describe('Component Validation Suite', () => {
+  describe('Basic Components - Interactive Validation', () => {
     it('UserProfile renders correctly', () => {
       render(<UserProfile name="Test User" role="Engineer" email="test@test.com" />);
 
@@ -48,7 +48,7 @@ describe('Migration Validation Suite', () => {
     });
   });
 
-  describe('Tier 2: Interactive Components - Event Validation', () => {
+  describe('Interactive Components - Event Validation', () => {
     it('ActionMenu renders with handlers', () => {
       const onEdit = jest.fn();
       const onDelete = jest.fn();

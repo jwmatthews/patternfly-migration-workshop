@@ -26,7 +26,7 @@ export const ProjectsPage: React.FC = () => {
           Projects
         </Title>
         <p className="pf-v5-u-mt-sm pf-v5-u-color-200">
-          Tier 1 Migration Patterns: Simple component renames and prop changes
+          Manage and track your project teams and deliverables
         </p>
       </PageSection>
       <Divider />
@@ -37,7 +37,7 @@ export const ProjectsPage: React.FC = () => {
               Project Members
             </Title>
             <p className="pf-v5-u-mb-md pf-v5-u-font-size-sm pf-v5-u-color-200">
-              Demonstrates Text → Content component migration
+              View and manage project team members
             </p>
             <UserProfile
               name="Jane Doe"
@@ -53,11 +53,11 @@ export const ProjectsPage: React.FC = () => {
               Project Status
             </Title>
             <p className="pf-v5-u-mb-md pf-v5-u-font-size-sm pf-v5-u-color-200">
-              Demonstrates Chip → Label migration and isDisabled → disabled prop changes
+              Track project status and current state
             </p>
             <PageHeader
               title="Component Examples"
-              subtitle="PatternFly v5 → v6 Migration"
+              subtitle="Interactive status indicators"
             />
             <div className="pf-v5-u-mt-md" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <StatusBadge status="active" isDisabled={false} />
@@ -71,12 +71,12 @@ export const ProjectsPage: React.FC = () => {
           className="pf-v5-u-p-md pf-v5-u-background-color-200"
           style={{ borderRadius: '4px', border: '1px solid #d2d2d2' }}
         >
-          <strong>Migration Notes:</strong>
+          <strong>Project Information:</strong>
           <ul className="pf-v5-u-mt-sm pf-v5-u-font-size-sm">
-            <li>Text component → Content component</li>
-            <li>Chip component → Label component</li>
-            <li>isDisabled prop → disabled prop</li>
-            <li>CSS classes: pf-v5-* → pf-v6-*</li>
+            <li>View team member profiles and contact information</li>
+            <li>Monitor project status with interactive badges</li>
+            <li>Toggle additional details as needed</li>
+            <li>Responsive design for all screen sizes</li>
           </ul>
         </div>
       </PageSection>

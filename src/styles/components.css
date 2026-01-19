@@ -1,4 +1,4 @@
-/* Tier 1: Simple class name changes */
+/* Custom component styling */
 .custom-card {
   border: 1px solid var(--pf-v5-global--BorderColor--100);
   padding: var(--pf-v5-global--spacer--md);
@@ -18,7 +18,7 @@
 }
 
 .pf-v5-u-mt-lg {
-  /* Using PatternFly v5 utility class */
+  /* Using PatternFly utility class */
   margin-top: var(--pf-v5-global--spacer--lg);
 }
 

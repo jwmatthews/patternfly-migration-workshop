@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Migration Validation Suite Visual Regression EmptyStateExample matches snapshot 1`] = `
+exports[`Component Validation Suite Visual Regression EmptyStateExample matches snapshot 1`] = `
 <div>
   <div
     class="pf-v5-c-empty-state"
@@ -58,7 +58,7 @@ exports[`Migration Validation Suite Visual Regression EmptyStateExample matches 
 </div>
 `;
 
-exports[`Migration Validation Suite Visual Regression StatusBadge matches snapshot 1`] = `
+exports[`Component Validation Suite Visual Regression StatusBadge matches snapshot 1`] = `
 <div>
   <div
     style="display: inline-flex; align-items: center; gap: 8px;"
@@ -84,7 +84,7 @@ exports[`Migration Validation Suite Visual Regression StatusBadge matches snapsh
 </div>
 `;
 
-exports[`Migration Validation Suite Visual Regression UserProfile matches snapshot 1`] = `
+exports[`Component Validation Suite Visual Regression UserProfile matches snapshot 1`] = `
 <div>
   <div
     class="pf-v5-c-card"

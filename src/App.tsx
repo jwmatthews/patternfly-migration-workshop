@@ -52,7 +52,7 @@ export const App: React.FC = () => {
         >
           <ToolbarItem>
             <div style={{ color: '#fff', padding: '0 16px' }}>
-              Workshop Demo
+              Demo App
             </div>
           </ToolbarItem>
         </ToolbarGroup>
@@ -92,7 +92,7 @@ export const App: React.FC = () => {
             </FlexItem>
             <FlexItem>
               <Title headingLevel="h1" size="lg" style={{ color: '#fff' }}>
-                Workshop Console
+                Admin Console
               </Title>
             </FlexItem>
           </Flex>

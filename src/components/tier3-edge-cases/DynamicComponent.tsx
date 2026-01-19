@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// This import triggers a violation, but AI can't safely fix the dynamic usage below
 import { Text } from '@patternfly/react-core';
 
 interface DynamicComponentProps {
@@ -8,29 +7,20 @@ interface DynamicComponentProps {
 }
 
 /**
- * This component uses dynamic/computed values that AI cannot confidently modify.
- *
- * **IMPORTANT FOR WORKSHOP:**
- * - Triggers Text → Content violation (static import)
- * - Triggers pf-v5-c → pf-v6-c violation (CSS class)
- * - BUT: Values are computed from runtime props
- * - AI can't safely determine all possible values
- * - **MANUAL REVIEW REQUIRED** - need to trace prop usage
- *
- * This demonstrates AI limitations with dynamic/computed patterns.
+ * A component that dynamically renders content based on component type and status.
  */
 export const DynamicComponent: React.FC<DynamicComponentProps> = ({
   componentType,
   status
 }) => {
-  // Dynamic CSS class construction - AI can't safely refactor template literals
+  // Dynamic CSS class construction
   const baseClass = `pf-v5-c-${componentType}`;
   const statusClass = `pf-v5-c-${componentType}--${status}`;
 
   // Dynamic content selection
   const [showDetails, setShowDetails] = useState(false);
 
-  // AI sees Text import violation but can't trace where it's used conditionally
+  // Conditionally render content based on details state
   const renderContent = () => {
     if (showDetails) {
       return (
@@ -53,7 +43,7 @@ export const DynamicComponent: React.FC<DynamicComponentProps> = ({
 };
 
 /**
- * Example usage showing why dynamic patterns are risky for AI
+ * Example usage of the dynamic component with different configurations.
  */
 export const DynamicComponentExample: React.FC = () => {
   // These values could come from API, user input, database, etc.

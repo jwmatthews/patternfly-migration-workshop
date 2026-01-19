@@ -9,8 +9,6 @@ interface CustomTextProps {
 
 /**
  * Custom wrapper that adds organization-specific behavior.
- * The internal implementation should migrate to Content,
- * but the wrapper name (CustomText) should stay the same.
  */
 export const CustomText: React.FC<CustomTextProps> = ({
   children,

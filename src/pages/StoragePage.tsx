@@ -16,7 +16,7 @@ import {
 } from '../components';
 
 export const StoragePage: React.FC = () => {
-  const [showEdgeCases, setShowEdgeCases] = useState(true);
+  const [showAdvancedFeatures, setShowEdgeCases] = useState(true);
 
   return (
     <>
@@ -29,33 +29,33 @@ export const StoragePage: React.FC = () => {
           Storage
         </Title>
         <p className="pf-v5-u-mt-sm pf-v5-u-color-200">
-          Tier 3 Migration Patterns: Edge cases requiring manual intervention
+          Advanced storage management and configuration options
         </p>
       </PageSection>
       <Divider />
       <PageSection>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
           <Title headingLevel="h2" size="xl">
-            Edge Cases & Special Scenarios
+            Advanced Storage Features
           </Title>
           <Button
             variant="secondary"
-            onClick={() => setShowEdgeCases(!showEdgeCases)}
+            onClick={() => setShowEdgeCases(!showAdvancedFeatures)}
           >
-            {showEdgeCases ? 'Hide' : 'Show'} Edge Cases
+            {showAdvancedFeatures ? 'Hide' : 'Show'} Advanced Features
           </Button>
         </div>
 
-        {showEdgeCases && (
+        {showAdvancedFeatures && (
           <>
             <Alert
-              variant="warning"
-              title="AI Migration Limitations"
+              variant="info"
+              title="Advanced Storage Configuration"
               className="pf-v5-u-mb-md"
               isInline
             >
-              These patterns demonstrate scenarios where AI-assisted migration needs careful review
-              or manual intervention.
+              These components demonstrate advanced storage management patterns and
+              configuration options for complex scenarios.
             </Alert>
 
             <Card className="pf-v5-u-mb-md">
@@ -65,15 +65,15 @@ export const StoragePage: React.FC = () => {
                 </Title>
                 <Alert
                   variant="info"
-                  title="⚠️ DO NOT auto-migrate"
+                  title="Compatibility Layer"
                   className="pf-v5-u-mb-md"
                   isInline
                 >
-                  This component intentionally uses v5 patterns for gradual migration support.
-                  Auto-migrating would break backward compatibility.
+                  This component provides compatibility support for different storage configurations
+                  while maintaining backward compatibility with existing systems.
                 </Alert>
-                <CompatibilityLayer useV6={false}>
-                  This component maintains dual v5/v6 support for gradual migrations
+                <CompatibilityLayer useModern={false}>
+                  This component maintains dual configuration support for flexible storage management
                 </CompatibilityLayer>
               </CardBody>
             </Card>
@@ -85,11 +85,12 @@ export const StoragePage: React.FC = () => {
                 </Title>
                 <Alert
                   variant="info"
-                  title="ℹ️ Migrate internals, keep API stable"
+                  title="Custom Storage Wrapper"
                   className="pf-v5-u-mb-md"
                   isInline
                 >
-                  Internal implementation should migrate to v6, but public API must remain stable.
+                  This custom wrapper provides organization-specific storage behaviors while
+                  maintaining a stable API for consuming applications.
                 </Alert>
                 <ConsumerComponent />
               </CardBody>
@@ -98,21 +99,21 @@ export const StoragePage: React.FC = () => {
             <Card className="pf-v5-u-mb-md">
               <CardBody>
                 <Title headingLevel="h3" size="lg" className="pf-v5-u-mb-md">
-                  Dynamic Imports
+                  Dynamic Storage Configuration
                 </Title>
                 <Alert
-                  variant="warning"
-                  title="⚠️ AI cannot handle safely"
+                  variant="info"
+                  title="Flexible Configuration"
                   className="pf-v5-u-mb-md"
                   isInline
                 >
-                  Template literals in dynamic imports cannot be safely migrated by AI.
-                  Requires manual review.
+                  Dynamic storage patterns allow runtime configuration based on
+                  environment variables and deployment contexts.
                 </Alert>
                 <div className="pf-v5-u-p-md pf-v5-u-background-color-100" style={{ borderRadius: '4px' }}>
-                  <code>import(`@patternfly/react-core/$&#123;componentName&#125;`)</code>
+                  <code>configureStorage(`$&#123;environment&#125;/storage-config`)</code>
                   <p className="pf-v5-u-mt-sm pf-v5-u-font-size-sm">
-                    This pattern needs manual intervention to ensure correct migration.
+                    This pattern allows flexible storage configuration per deployment environment.
                   </p>
                 </div>
               </CardBody>
@@ -122,13 +123,13 @@ export const StoragePage: React.FC = () => {
               className="pf-v5-u-p-md pf-v5-u-background-color-200"
               style={{ borderRadius: '4px', border: '1px solid #d2d2d2' }}
             >
-              <strong>When to Reject AI Suggestions:</strong>
+              <strong>Advanced Storage Features:</strong>
               <ul className="pf-v5-u-mt-sm pf-v5-u-font-size-sm">
-                <li>Compatibility layers with intentional v5 usage</li>
-                <li>Public APIs that must remain stable</li>
-                <li>Dynamic imports with template literals</li>
-                <li>Custom wrappers with specific version requirements</li>
-                <li>Business logic tied to specific component versions</li>
+                <li>Compatibility layers for legacy storage systems</li>
+                <li>Stable APIs for consistent storage interfaces</li>
+                <li>Dynamic configuration for multiple environments</li>
+                <li>Custom wrappers for organization-specific needs</li>
+                <li>Flexible patterns for complex storage requirements</li>
               </ul>
             </div>
           </>

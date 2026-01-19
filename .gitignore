@@ -27,7 +27,7 @@ dist-ssr
 analysis-results/
 output.yaml
 
-# Workshop setup validation
+# Setup validation
 setup-validation-report.txt
 
 # Bedrock credentials (NEVER commit these!)

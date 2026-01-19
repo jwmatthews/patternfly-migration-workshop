@@ -1,7 +1,7 @@
 {
-  "name": "patternfly-migration-workshop",
+  "name": "patternfly-app",
   "version": "1.0.0",
-  "description": "PatternFly v5 → v6 Migration Workshop Application",
+  "description": "PatternFly React Application",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -38,16 +38,9 @@
   },
   "keywords": [
     "patternfly",
-    "migration",
-    "workshop",
-    "konveyor",
     "react",
     "typescript"
   ],
-  "author": "Konveyor Community",
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/konveyor/patternfly-migration-workshop.git"
-  }
+  "author": "",
+  "license": "Apache-2.0"
 }
