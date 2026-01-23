@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '@patternfly/react-core';
+import { Content } from '@patternfly/react-core';
 
 interface CompatibilityLayerProps {
   useModern: boolean;
@@ -16,5 +16,5 @@ export const CompatibilityLayer: React.FC<CompatibilityLayerProps> = ({
   // Conditionally render based on version preference
   // Note: useModern parameter available for future implementation
   void useModern; // Acknowledge parameter to avoid unused variable warning
-  return <Text component="p">{children}</Text>;
+  return <Content component="p">{children}</Content>;
 };

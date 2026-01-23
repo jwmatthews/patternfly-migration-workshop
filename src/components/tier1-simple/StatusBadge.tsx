@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Chip } from '@patternfly/react-core';
+import { Label } from '@patternfly/react-core';
 
 interface StatusBadgeProps {
   status: 'active' | 'inactive' | 'pending';
@@ -20,13 +20,12 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
 
   return (
     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-      <Chip
-        isReadOnly
+      <Label
         isDisabled={isDisabled}
-        onClick={handleClick}
+        onClick={isDisabled ? undefined : handleClick}
       >
         {status}
-      </Chip>
+      </Label>
       {clickCount > 0 && (
         <span data-testid="click-count" style={{ fontSize: '12px', color: '#666' }}>
           Clicked {clickCount}x

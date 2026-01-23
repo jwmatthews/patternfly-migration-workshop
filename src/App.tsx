@@ -29,7 +29,6 @@ import {
   StoragePage
 } from './pages';
 import './styles/components.css';
-import './styles/tokens.css';
 
 type PageType = 'projects' | 'workloads' | 'storage';
 

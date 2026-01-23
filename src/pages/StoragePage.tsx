@@ -25,10 +25,10 @@ export const StoragePage: React.FC = () => {
           <BreadcrumbItem to="#">Home</BreadcrumbItem>
           <BreadcrumbItem isActive>Storage</BreadcrumbItem>
         </Breadcrumb>
-        <Title headingLevel="h1" size="2xl" className="pf-v5-u-mt-md">
+        <Title headingLevel="h1" size="2xl" className="pf-v6-u-mt-md">
           Storage
         </Title>
-        <p className="pf-v5-u-mt-sm pf-v5-u-color-200">
+        <p className="pf-v6-u-mt-sm pf-v6-u-color-200">
           Advanced storage management and configuration options
         </p>
       </PageSection>
@@ -51,22 +51,22 @@ export const StoragePage: React.FC = () => {
             <Alert
               variant="info"
               title="Advanced Storage Configuration"
-              className="pf-v5-u-mb-md"
+              className="pf-v6-u-mb-md"
               isInline
             >
               These components demonstrate advanced storage management patterns and
               configuration options for complex scenarios.
             </Alert>
 
-            <Card className="pf-v5-u-mb-md">
+            <Card className="pf-v6-u-mb-md">
               <CardBody>
-                <Title headingLevel="h3" size="lg" className="pf-v5-u-mb-md">
+                <Title headingLevel="h3" size="lg" className="pf-v6-u-mb-md">
                   Compatibility Layer
                 </Title>
                 <Alert
                   variant="info"
                   title="Compatibility Layer"
-                  className="pf-v5-u-mb-md"
+                  className="pf-v6-u-mb-md"
                   isInline
                 >
                   This component provides compatibility support for different storage configurations
@@ -78,15 +78,15 @@ export const StoragePage: React.FC = () => {
               </CardBody>
             </Card>
 
-            <Card className="pf-v5-u-mb-md">
+            <Card className="pf-v6-u-mb-md">
               <CardBody>
-                <Title headingLevel="h3" size="lg" className="pf-v5-u-mb-md">
+                <Title headingLevel="h3" size="lg" className="pf-v6-u-mb-md">
                   Custom Wrapper Component
                 </Title>
                 <Alert
                   variant="info"
                   title="Custom Storage Wrapper"
-                  className="pf-v5-u-mb-md"
+                  className="pf-v6-u-mb-md"
                   isInline
                 >
                   This custom wrapper provides organization-specific storage behaviors while
@@ -96,23 +96,23 @@ export const StoragePage: React.FC = () => {
               </CardBody>
             </Card>
 
-            <Card className="pf-v5-u-mb-md">
+            <Card className="pf-v6-u-mb-md">
               <CardBody>
-                <Title headingLevel="h3" size="lg" className="pf-v5-u-mb-md">
+                <Title headingLevel="h3" size="lg" className="pf-v6-u-mb-md">
                   Dynamic Storage Configuration
                 </Title>
                 <Alert
                   variant="info"
                   title="Flexible Configuration"
-                  className="pf-v5-u-mb-md"
+                  className="pf-v6-u-mb-md"
                   isInline
                 >
                   Dynamic storage patterns allow runtime configuration based on
                   environment variables and deployment contexts.
                 </Alert>
-                <div className="pf-v5-u-p-md pf-v5-u-background-color-100" style={{ borderRadius: '4px' }}>
+                <div className="pf-v6-u-p-md pf-v6-u-background-color-100" style={{ borderRadius: '4px' }}>
                   <code>configureStorage(`$&#123;environment&#125;/storage-config`)</code>
-                  <p className="pf-v5-u-mt-sm pf-v5-u-font-size-sm">
+                  <p className="pf-v6-u-mt-sm pf-v6-u-font-size-sm">
                     This pattern allows flexible storage configuration per deployment environment.
                   </p>
                 </div>
@@ -120,11 +120,11 @@ export const StoragePage: React.FC = () => {
             </Card>
 
             <div
-              className="pf-v5-u-p-md pf-v5-u-background-color-200"
+              className="pf-v6-u-p-md pf-v6-u-background-color-200"
               style={{ borderRadius: '4px', border: '1px solid #d2d2d2' }}
             >
               <strong>Advanced Storage Features:</strong>
-              <ul className="pf-v5-u-mt-sm pf-v5-u-font-size-sm">
+              <ul className="pf-v6-u-mt-sm pf-v6-u-font-size-sm">
                 <li>Compatibility layers for legacy storage systems</li>
                 <li>Stable APIs for consistent storage interfaces</li>
                 <li>Dynamic configuration for multiple environments</li>

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import {
   EmptyState,
-  EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateHeader,
   Button
 } from '@patternfly/react-core';
 import { SearchIcon, CheckCircleIcon } from '@patternfly/react-icons';
@@ -25,12 +23,11 @@ export const EmptyStateExample: React.FC<EmptyStateExampleProps> = ({ onAction }
 
   if (filtersCleared) {
     return (
-      <EmptyState>
-        <EmptyStateHeader
-          titleText="Filters cleared!"
-          headingLevel="h2"
-          icon={<EmptyStateIcon icon={CheckCircleIcon} />}
-        />
+      <EmptyState
+        titleText="Filters cleared!"
+        headingLevel="h2"
+        icon={<CheckCircleIcon />}
+      >
         <EmptyStateBody data-testid="success-message">
           Try searching again with updated criteria.
         </EmptyStateBody>
@@ -39,12 +36,11 @@ export const EmptyStateExample: React.FC<EmptyStateExampleProps> = ({ onAction }
   }
 
   return (
-    <EmptyState>
-      <EmptyStateHeader
-        titleText="No results found"
-        headingLevel="h2"
-        icon={<EmptyStateIcon icon={SearchIcon} />}
-      />
+    <EmptyState
+      titleText="No results found"
+      headingLevel="h2"
+      icon={<SearchIcon />}
+    >
       <EmptyStateBody>
         Try adjusting your search criteria or filters.
       </EmptyStateBody>

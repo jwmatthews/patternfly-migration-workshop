@@ -1,33 +1,5 @@
-/* Custom component styling */
-.custom-card {
-  border: 1px solid var(--pf-v5-global--BorderColor--100);
-  padding: var(--pf-v5-global--spacer--md);
-  border-radius: var(--pf-v5-global--BorderRadius--sm);
-}
-
-.pf-v5-c-button.custom-button {
-  background-color: var(--pf-v5-global--primary-color--100);
-  color: var(--pf-v5-global--Color--light-100);
-}
-
-/* Utility class usage */
-.header-section {
-  display: flex;
-  align-items: center;
-  gap: var(--pf-v5-global--spacer--sm);
-}
-
-.pf-v5-u-mt-lg {
-  /* Using PatternFly utility class */
-  margin-top: var(--pf-v5-global--spacer--lg);
-}
-
-.pf-v5-u-mb-md {
-  margin-bottom: var(--pf-v5-global--spacer--md);
-}
-
 /* Custom emphasis class used by CustomText wrapper */
 .custom-emphasis {
-  font-weight: var(--pf-v5-global--FontWeight--bold);
-  color: var(--pf-v5-global--primary-color--100);
+  font-weight: var(--pf-t--global--font--weight--body--bold);
+  color: var(--pf-t--global--color--brand--default);
 }

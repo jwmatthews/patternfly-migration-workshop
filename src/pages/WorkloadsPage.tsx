@@ -39,31 +39,31 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
             {activeItem === 'pods' ? 'Pods' : 'Deployments'}
           </BreadcrumbItem>
         </Breadcrumb>
-        <Title headingLevel="h1" size="2xl" className="pf-v5-u-mt-md">
+        <Title headingLevel="h1" size="2xl" className="pf-v6-u-mt-md">
           {activeItem === 'pods' ? 'Pods' : 'Deployments'}
         </Title>
-        <p className="pf-v5-u-mt-sm pf-v5-u-color-200">
+        <p className="pf-v6-u-mt-sm pf-v6-u-color-200">
           Manage and monitor your application workloads and deployments
         </p>
       </PageSection>
       <Divider />
       <PageSection>
-        <div className="pf-v5-u-mb-md pf-v5-u-p-sm pf-v5-u-background-color-100" style={{ borderRadius: '4px' }}>
+        <div className="pf-v6-u-mb-md pf-v6-u-p-sm pf-v6-u-background-color-100" style={{ borderRadius: '4px' }}>
           <strong>Interactions logged:</strong> {interactionsCount}
         </div>
 
-        <Card className="pf-v5-u-mb-md">
+        <Card className="pf-v6-u-mb-md">
           <CardBody>
             <Tabs
               activeKey={activeTabKey}
               onSelect={(_event, tabIndex) => setActiveTabKey(tabIndex as number)}
             >
               <Tab eventKey={0} title={<TabTitleText>Details</TabTitleText>}>
-                <div className="pf-v5-u-p-md">
-                  <Title headingLevel="h2" size="lg" className="pf-v5-u-mb-md">
+                <div className="pf-v6-u-p-md">
+                  <Title headingLevel="h2" size="lg" className="pf-v6-u-mb-md">
                     Resource Actions
                   </Title>
-                  <p className="pf-v5-u-mb-md pf-v5-u-font-size-sm pf-v5-u-color-200">
+                  <p className="pf-v6-u-mb-md pf-v6-u-font-size-sm pf-v6-u-color-200">
                     Perform actions on selected resources
                   </p>
                   <ActionMenu
@@ -73,11 +73,11 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
                 </div>
               </Tab>
               <Tab eventKey={1} title={<TabTitleText>Actions</TabTitleText>}>
-                <div className="pf-v5-u-p-md">
-                  <Title headingLevel="h2" size="lg" className="pf-v5-u-mb-md">
+                <div className="pf-v6-u-p-md">
+                  <Title headingLevel="h2" size="lg" className="pf-v6-u-mb-md">
                     Quick Actions
                   </Title>
-                  <p className="pf-v5-u-mb-md pf-v5-u-font-size-sm pf-v5-u-color-200">
+                  <p className="pf-v6-u-mb-md pf-v6-u-font-size-sm pf-v6-u-color-200">
                     Quick actions for common operations
                   </p>
                   <IconButtons
@@ -88,11 +88,11 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
                 </div>
               </Tab>
               <Tab eventKey={2} title={<TabTitleText>Filters</TabTitleText>}>
-                <div className="pf-v5-u-p-md">
-                  <Title headingLevel="h2" size="lg" className="pf-v5-u-mb-md">
+                <div className="pf-v6-u-p-md">
+                  <Title headingLevel="h2" size="lg" className="pf-v6-u-mb-md">
                     Search Results
                   </Title>
-                  <p className="pf-v5-u-mb-md pf-v5-u-font-size-sm pf-v5-u-color-200">
+                  <p className="pf-v6-u-mb-md pf-v6-u-font-size-sm pf-v6-u-color-200">
                     Filter and search through available workloads
                   </p>
                   <EmptyStateExample onAction={handleInteraction} />
@@ -103,11 +103,11 @@ export const WorkloadsPage: React.FC<WorkloadsPageProps> = ({ activeItem }) => {
         </Card>
 
         <div
-          className="pf-v5-u-p-md pf-v5-u-background-color-200"
+          className="pf-v6-u-p-md pf-v6-u-background-color-200"
           style={{ borderRadius: '4px', border: '1px solid #d2d2d2' }}
         >
           <strong>Workload Management Features:</strong>
-          <ul className="pf-v5-u-mt-sm pf-v5-u-font-size-sm">
+          <ul className="pf-v6-u-mt-sm pf-v6-u-font-size-sm">
             <li>Comprehensive action menus for resource management</li>
             <li>Quick action buttons for common operations</li>
             <li>Advanced filtering and search capabilities</li>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, TextVariants } from '@patternfly/react-core';
+import { Content } from '@patternfly/react-core';
 
 interface CustomTextProps {
   children: React.ReactNode;
   emphasis?: boolean;
-  variant?: TextVariants;
+  component?: React.ElementType;
 }
 
 /**
@@ -13,15 +13,15 @@ interface CustomTextProps {
 export const CustomText: React.FC<CustomTextProps> = ({
   children,
   emphasis = false,
-  variant = TextVariants.p
+  component = 'p'
 }) => {
   return (
-    <Text
-      component={variant}
+    <Content
+      component={component}
       className={emphasis ? 'custom-emphasis' : ''}
     >
       {children}
-    </Text>
+    </Content>
   );
 };
 
@@ -30,7 +30,7 @@ export const ConsumerComponent: React.FC = () => {
   return (
     <div>
       <CustomText emphasis>Important text</CustomText>
-      <CustomText variant={TextVariants.h3}>Heading</CustomText>
+      <CustomText component="h3">Heading</CustomText>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text } from '@patternfly/react-core';
+import { Content } from '@patternfly/react-core';
 
 interface DynamicComponentProps {
   componentType: 'alert' | 'card' | 'banner';
@@ -14,8 +14,9 @@ export const DynamicComponent: React.FC<DynamicComponentProps> = ({
   status
 }) => {
   // Dynamic CSS class construction
-  const baseClass = `pf-v5-c-${componentType}`;
-  const statusClass = `pf-v5-c-${componentType}--${status}`;
+  const baseClass = `pf-v6-c-${componentType}`;
+  const statusModifier = status === 'error' ? 'danger' : status;
+  const statusClass = `pf-m-${statusModifier}`;
 
   // Dynamic content selection
   const [showDetails, setShowDetails] = useState(false);
@@ -24,12 +25,12 @@ export const DynamicComponent: React.FC<DynamicComponentProps> = ({
   const renderContent = () => {
     if (showDetails) {
       return (
-        <Text component="p">
+        <Content component="p">
           Detailed information for {componentType} with {status} status.
-        </Text>
+        </Content>
       );
     }
-    return <Text component="small">Summary view</Text>;
+    return <Content component="small">Summary view</Content>;
   };
 
   return (
