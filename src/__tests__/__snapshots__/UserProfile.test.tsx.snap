@@ -14,20 +14,18 @@ exports[`UserProfile matches snapshot 1`] = `
     >
       <div
         class="pf-v6-c-content"
+        data-ouia-component-id="OUIA-Generated-Content-3"
+        data-ouia-component-type="PF6/Content"
+        data-ouia-safe="true"
+        data-pf-content="true"
       >
-        <h2
-          class=""
-        >
+        <h2>
           Snapshot Test
         </h2>
-        <p
-          class=""
-        >
+        <p>
           QA Engineer
         </p>
-        <small
-          class=""
-        >
+        <small>
           qa@example.com
         </small>
       </div>

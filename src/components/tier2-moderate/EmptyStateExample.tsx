@@ -26,7 +26,7 @@ export const EmptyStateExample: React.FC<EmptyStateExampleProps> = ({ onAction }
       <EmptyState
         titleText="Filters cleared!"
         headingLevel="h2"
-        icon={<CheckCircleIcon />}
+        icon={CheckCircleIcon}
       >
         <EmptyStateBody data-testid="success-message">
           Try searching again with updated criteria.
@@ -39,7 +39,7 @@ export const EmptyStateExample: React.FC<EmptyStateExampleProps> = ({ onAction }
     <EmptyState
       titleText="No results found"
       headingLevel="h2"
-      icon={<SearchIcon />}
+      icon={SearchIcon}
     >
       <EmptyStateBody>
         Try adjusting your search criteria or filters.

@@ -44,14 +44,17 @@ exports[`Component Validation Suite Visual Regression EmptyStateExample matches 
         Try adjusting your search criteria or filters.
       </div>
       <button
-        aria-disabled="false"
         class="pf-v6-c-button pf-m-primary"
         data-ouia-component-id="OUIA-Generated-Button-primary-3"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
-        Clear filters
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Clear filters
+        </span>
       </button>
     </div>
   </div>
@@ -64,20 +67,18 @@ exports[`Component Validation Suite Visual Regression StatusBadge matches snapsh
     style="display: inline-flex; align-items: center; gap: 8px;"
   >
     <span
-      class="pf-v6-c-label"
-      data-ouia-component-id="OUIA-Generated-Label-2"
-      data-ouia-component-type="PF6/Label"
-      data-ouia-safe="true"
+      class="pf-v6-c-label pf-m-filled pf-m-clickable"
     >
-      <span
-        class="pf-v6-c-label__content"
+      <button
+        class="pf-v6-c-label__content pf-m-clickable"
+        type="button"
       >
         <span
           class="pf-v6-c-label__text"
         >
           active
         </span>
-      </span>
+      </button>
     </span>
   </div>
 </div>
@@ -97,20 +98,18 @@ exports[`Component Validation Suite Visual Regression UserProfile matches snapsh
     >
       <div
         class="pf-v6-c-content"
+        data-ouia-component-id="OUIA-Generated-Content-2"
+        data-ouia-component-type="PF6/Content"
+        data-ouia-safe="true"
+        data-pf-content="true"
       >
-        <h2
-          class=""
-        >
+        <h2>
           Snap Test
         </h2>
-        <p
-          class=""
-        >
+        <p>
           Tester
         </p>
-        <small
-          class=""
-        >
+        <small>
           snap@test.com
         </small>
       </div>
